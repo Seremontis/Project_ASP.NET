@@ -13,7 +13,9 @@
 
 @if (!String.IsNullOrEmpty(weryfikacja))
 {
-    <div><h1>Witaj @weryfikacja</h1></div>
+    <div style="text-align:center"><h1>Witaj <u>@weryfikacja</u></h1>
+    <h2>Życzymy udanych zakupów</h2>
+    <img src="~/images/witaj.jpg" style="border-radius:20%"/></div>
 }
 else if (!String.IsNullOrEmpty(@ViewData["logowanie"].ToString()))
 {

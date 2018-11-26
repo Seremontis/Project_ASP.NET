@@ -104,11 +104,6 @@ form > .remove {
 
 }
 
-.Confirm{
-    margin:auto;
-    width:50vw;
-}
-
 .brak{
     margin:auto;
     padding-top:30px;
@@ -116,3 +111,23 @@ form > .remove {
     color:red;
     text-align:center;
 }
+
+.formZatw{
+    padding-top:20px;
+}
+.Confirm {
+    height: 50px;
+    border: solid #002af5 2px;
+    border-radius: 5px;
+    background-color: #00d031;
+    display: block;
+    margin: auto;
+    width: 50vw;
+    font-family: 'Forte';
+    font-size:25px;
+}
+
+    .Confirm:hover {
+        background-color: #049626;
+        color:darkgray;
+    }

@@ -15,12 +15,13 @@
             @foreach (var item in Model)
             {
                 decimal wynik = Math.Round(item.Cena_netto + (item.Cena_netto * (decimal)item.Stawka), 2);
+                int podatek = Convert.ToInt32(item.Stawka * 100);
                 suma += wynik;
                 <tr>
                     <td>@item.Nazwa</td>
                     <td>@item.Typ2</td>
                     <td>@Math.Round(item.Cena_netto, 2) zł</td>
-                    <td>@Math.Round(item.Stawka, 2)</td>
+                    <td>@podatek %</td>
                     <td>@wynik zł</td>
                     <td>
                         <form asp-controller="Home" asp-action="SearchRem" asp-route-a="@item.ID" asp-route-typp="0" asp-route-kategoriaa="0">
@@ -36,10 +37,11 @@
                 <td class="null"></td>
             </tr>
         </table>
-
-        <form asp-controller="Home" asp-action="ZatwierdzZam">
-            <button class="Confirm">Potwierdzam zamówienie</button>
-        </form>
+        
+            <form class="formZatw" asp-controller="Home" asp-action="ZatwierdzZam">
+                <button class="Confirm">Potwierdzam zamówienie</button>
+            </form>
+        
     }
     else
     {
