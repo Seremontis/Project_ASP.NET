@@ -1,0 +1,118 @@
+﻿main>h2{
+    text-align:center;
+    text-decoration:underline;
+}
+.Podsumowanie {
+    padding-top: 25px;
+}
+
+table {
+    margin: auto;
+}
+
+tr {
+    border-bottom: solid 1px black;
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+}
+
+    tr:first-child {
+        border: none;
+    }
+
+    tr:last-child {
+        border: none;
+    }
+
+th, td {
+    min-width: 170px;
+    text-align: center;
+}
+
+    td:last-child, th:last-child {
+        min-width: 100px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+th {
+    background-color: darkgray;
+    border-bottom: solid 1px black;
+    border-top: solid 1px black;
+    font-size: 1.15em;
+    padding: 5px;
+}
+
+    th:nth-child(2n) {
+        background-color: #808080;
+        color: #eaeaea;
+    }
+
+    th:first-child {
+        border-left: solid 1px black;
+    }
+
+    th:last-child {
+        border-right: solid 1px black;
+    }
+
+td {
+    padding-bottom: 10px;
+    padding-top: 10px
+}
+
+    td:nth-child(2n) {
+        background-color: #aaa89b;
+    }
+
+form > .remove {
+    border: none;
+    height: 45px;
+    width: 45px;
+    background: url('../images/icon/remove.png') no-repeat;
+    background-size: 40px 40px;
+}
+
+.null {
+    border: none;
+    background: none;
+}
+
+    .null:last-child {
+        background: none;
+    }
+
+#zaplata1, #zaplata2 {
+    background-color: #f3b92f;
+    font-weight:bold;
+    font-size:1.3em;
+}
+
+#zaplata1 {
+    border-top: solid 1px black;
+    border-left: solid 1px black;
+    border-bottom: solid 1px black;
+    text-align:right;
+}
+
+#zaplata2 {
+    border-top: solid 1px black;
+    border-right: solid 1px black;
+    border-bottom: solid 1px black;
+    text-decoration:underline;
+    font-family:'Axure Handwriting';
+
+}
+
+.Confirm{
+    margin:auto;
+    width:50vw;
+}
+
+.brak{
+    margin:auto;
+    padding-top:30px;
+    font-size:30px;
+    color:red;
+    text-align:center;
+}

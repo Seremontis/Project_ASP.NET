@@ -1,0 +1,116 @@
+﻿.produkt {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 8px;
+    width: 90%;
+    position: relative;
+    display: grid;
+    grid-template-columns: 250px auto 45px;
+    border: solid black 1px;
+    max-height: 200px;
+    overflow: hidden;
+}
+
+    .produkt:nth-child(2n+1) {
+        background: rgb(140, 180, 124)
+    }
+
+    .produkt:nth-child(2n) {
+        background: rgb(228, 177, 177);
+    }
+
+    .produkt:hover {
+        opacity: 0.85;
+    }
+
+.obrazek {
+    margin: 8px;
+    position: relative;
+    grid-column: 1;
+}
+
+    .obrazek > img {
+        height: 100px;
+        width: 250px;
+    }
+
+.produkt_info {
+    display: grid;
+    grid-template-rows: 30px auto;
+    margin: 3px;
+    grid-column: 2;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.dane {
+    margin: auto;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row: 1;
+    width: 100%;
+}
+
+.tytul,
+.autor,
+.data {
+    position: relative;
+    margin: auto;
+}
+
+.tytul {
+    grid-column: 1;
+}
+
+.autor {
+    grid-column: 2;
+}
+
+.data {
+    grid-column: 3;
+}
+
+.szczegoly {
+    display: block;
+    border-top: solid black 3px;
+    background: rgba(76, 141, 169, 0.74);
+    grid-row: 2;
+}
+
+.edit {
+    margin: auto;
+}
+
+    .edit > form > .add {
+        border: none;
+        height: 45px;
+        width: 45px;
+        background: url('../images/icon/add.png') no-repeat;
+        background-size: 40px 40px;
+    }
+
+    .edit > .lock {
+        border: none;
+        height: 45px;
+        width: 45px;
+        background: url('../images/icon/lock.png') no-repeat;
+        background-size: 40px 40px;
+    }
+
+    .edit > form > .remove {
+        border: none;
+        height: 45px;
+        width: 45px;
+        background: url('../images/icon/remove.png') no-repeat;
+        background-size: 40px 40px;
+    }
+
+    .edit > .guest {
+        border: none;
+        height: 45px;
+        width: 45px;
+        background: url('../images/icon/guest.png') no-repeat;
+        background-size: 40px 40px;
+    }
+    

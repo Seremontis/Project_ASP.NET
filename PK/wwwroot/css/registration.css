@@ -1,0 +1,62 @@
+﻿.komunikat {
+    background: rgb(255, 216, 0);
+    color: rgb(255, 0, 0);
+    text-decoration:underline;
+}
+
+.back {
+    margin: auto;
+    position: relative;
+    width: 450px;
+    background-color: #5C6368;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    border-radius: 30px;
+}
+
+label{
+    margin:auto;
+    margin-top:5px;
+    display:block;
+    width:auto;
+    text-align:center;
+    color:#e6c6ab
+}
+label:first-child{
+    margin-top:0;
+}
+
+.back>h2{
+    color:aqua;  
+    margin:auto;
+    text-align:center;
+}
+
+
+
+input, select {
+    background-color: #ddd;
+    margin: 0 auto;
+    display: block;
+    width: 75%;
+    text-align:center;
+}
+    input:hover, select:hover {
+        background-color: #fcfcfc;
+    }
+
+input[type="submit"] {
+    margin: auto;
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    opacity: 0.9;
+}
+    input[type="submit"]:hover {
+        background-color: #8aeb8e;
+    }
+
+
+.formularz {
+    box-sizing: border-box
+}

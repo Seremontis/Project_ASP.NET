@@ -1,0 +1,40 @@
+﻿@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "Strona główna";
+    string weryfikacja = Context.Session.GetString("Login");
+    int Zam=-1;
+    if (Context.Session.GetInt32("WykZam") != null)
+    {
+        Zam = (int)Context.Session.GetInt32("WykZam");
+    }
+
+}
+
+
+@if (!String.IsNullOrEmpty(weryfikacja))
+{
+    <div><h1>Witaj @weryfikacja</h1></div>
+}
+else if (!String.IsNullOrEmpty(@ViewData["logowanie"].ToString()))
+{
+    <script>alert("Logowanie się nie powiodło");</script>
+
+}
+else
+{
+    <script>alert("Brak dostępu");</script>
+}
+
+
+@if (Zam== 1)
+{
+    <script>alert("Zamównienie zostało zrealizowane");</script>
+}
+else if (Zam == -1)
+{
+
+}
+else
+{
+    <script>alert("Operacja nie powiodła się");</script>
+}

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<PK.Models.Lista>
+@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "Podsumowanie";
+    decimal suma = 0;
+}
+<link rel="stylesheet" runat="server" media="screen" href="~/css/Podsumowanie.css" />
+<h2>Podsumowanie</h2>
+
+<div class="Podsumowanie">
+    @if (Model.Count() != 0)
+    {
+        <table>
+            <tr><th>Nazwa</th><th>Rodzaj produkcji</th><th>Cena podstawowa</th><th>Podatek</th><th>Cena łączna</th><th>Modyfikacje</th></tr>
+            @foreach (var item in Model)
+            {
+                decimal wynik = Math.Round(item.Cena_netto + (item.Cena_netto * (decimal)item.Stawka), 2);
+                suma += wynik;
+                <tr>
+                    <td>@item.Nazwa</td>
+                    <td>@item.Typ2</td>
+                    <td>@Math.Round(item.Cena_netto, 2) zł</td>
+                    <td>@Math.Round(item.Stawka, 2)</td>
+                    <td>@wynik zł</td>
+                    <td>
+                        <form asp-controller="Home" asp-action="SearchRem" asp-route-a="@item.ID" asp-route-typp="0" asp-route-kategoriaa="0">
+                            <button class="remove"></button>
+                        </form>
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td colspan="3" class="null"></td>
+                <td id="zaplata1">Suma:</td>
+                <td id="zaplata2">@suma zł</td>
+                <td class="null"></td>
+            </tr>
+        </table>
+
+        <form asp-controller="Home" asp-action="ZatwierdzZam">
+            <button class="Confirm">Potwierdzam zamówienie</button>
+        </form>
+    }
+    else
+    {
+        <div class="brak">Brak produktów</div>
+    }
+
+
+</div>

@@ -1,0 +1,176 @@
+﻿@using Microsoft.AspNetCore.Http
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Strona powitalna</title>
+
+    <environment include="Development">
+        <link href="~/lib/smartmenus/css/sm-core-css.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link href="~/lib/smartmenus/css/sm-blue/sm-blue.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="~/css/style.css" />
+        <script src="~/lib/smartmenus/libs/jquery/jquery.js"></script>
+        <!--Menu-->
+        <script type="text/javascript" src="~/lib/smartmenus/jquery.smartmenus.js"></script>
+        <!--Reszta-->
+        <script src="~/js/skryptJQ.js"></script>
+        <script src="~/js/skrypt.js"></script>
+        <!-- Slider-->
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    </environment>
+
+</head>
+<body>
+    <div class="kontener">
+        <header>
+            <div class="zawartoscgorna">
+                <nav id="main-nav">
+
+                    <ul id="main-menu" class="sm sm-blue">
+                        <li><a asp-action="Index">Strona główna</a></li>
+                        <li>
+                            <a>Seriale</a>
+                            <ul>
+                                <li><a asp-action="Searchfilter" asp-route-typ="2" asp-route-kategoria="1" name="horror">Horror</a></li>
+                                <li><a asp-action="Searchfilter" asp-route-typ="2" asp-route-kategoria="2" name="komedia">komedia</a></li>
+                                <li><a asp-action="Searchfilter" asp-route-typ="2" asp-route-kategoria="3" name="romans">romans</a></li>
+                                <li><a asp-action="Searchfilter" asp-route-typ="2" asp-route-kategoria="4" name="akcja">akcja</a></li>
+                                <li><a asp-action="Searchfilter" asp-route-typ="2" asp-route-kategoria="5" name="tragedia">tragedia</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a>Filmy</a>
+                            <ul>
+                                <li><a asp-action="Searchfilter" asp-route-typ="1" asp-route-kategoria="1" name="horror">Horror</a></li>
+                                <li><a asp-action="Searchfilter" asp-route-typ="1" asp-route-kategoria="2" name="komedia">komedia</a></li>
+                                <li><a asp-action="Searchfilter" asp-route-typ="1" asp-route-kategoria="3" name="romans">romans</a></li>
+                                <li><a asp-action="Searchfilter" asp-route-typ="1" asp-route-kategoria="4" name="akcja">akcja</a></li>
+                                <li><a asp-action="Searchfilter" asp-route-typ="1" asp-route-kategoria="5" name="tragedia">tragedia</a></li>
+                            </ul>
+                        </li>
+                        <li><a asp-action="Contact">Kontakt</a></li>
+
+                    </ul>
+                </nav>
+                <div class="panel_log">
+                    @{ if (!String.IsNullOrEmpty(Context.Session.GetString("Login")))
+                        {
+                            <div class="logowanie2">
+                                Zalogowany: <strong>@Context.Session.GetString("Login")</strong>
+
+                                <a class="logout" asp-action="Logout">Wyloguj</a>
+                            </div>
+                            <div class="butkoszyk">
+                                <form asp-controller="Home" asp-action="Podsumowanie">
+                                    <button id="koszyk"></button>
+                                </form>
+                            </div>
+                        }
+                        else
+                        {
+                            <button class="logowanie">Logowanie</button>
+                        }
+                    }
+                </div>
+            </div>
+            <div id="carousel_slide" class="carousel slide" data-ride="carousel">
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="~/images/slider/slide1.jpg" />
+                        <div class="carousel-caption" role="option">
+                            <h5>t</h5>
+                            <p>test</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img src="~/images/slider/slide2.jpg" alt="Chicago">
+                        <div class="carousel-caption" role="option">
+                            <h5>t</h5>
+                            <p>test</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img src="~/images/slider/slide3.jpg" alt="New York">
+                        <div class="carousel-caption" role="option">
+                            <h5>t</h5>
+                            <p>test</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+        <main>
+            @RenderBody()
+        </main>
+        <footer>
+            <div class="footer_details">
+                <div class="kontaktfoot" id="k1">
+                    <h3 class="tytul">Dane do pierwszej siedziby</h3>
+                    <ul>
+                        <li>ul. Władysława Łokietka 79</li>
+                        <li>31-280 Kraków</li>
+                        <li>Nr: 583 098 928</li>
+                    </ul>
+                </div>
+                <div class="kontaktfoot">
+                    <h3 class="tytul">Dane do drugiej siedziby</h3>
+                    <ul>
+                        <li>ul. kupa 18</li>
+                        <li>31-280 Kraków</li>
+                        <li>Nr: 523 989 928</li>
+                    </ul>
+
+                </div>
+                <div class="kontaktfoot">
+                    <h3 class="tytul">Ogólne informacje</h3>
+                    <ul>
+                        <li>NIP: 9452156998</li>
+                        <li>REGON: 121495203</li>
+                        <li>KRS: 0000395171</li>
+                        <li>Kapitał zakładowy: 2 811 500 zł</li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+
+    <div class="modal_body">
+        <div class="modal_active">
+            <div class="tytul"><button class="close_pop">X</button></div>
+            <div class="opcja">
+                <button onclick="modal_log()" class="zaloguj">Zaloguj się</button>
+                <form asp-controller="Home" asp-action="Rejestracja" asp-route-uruchom="true">
+                    <button>Zarejestruj się</button>
+                </form>
+            </div>
+        </div>
+        <div class="logowanie_mod">
+            <div class="tytul"><button class="close_pop">X</button></div>
+            <div class="opcja">
+                <form asp-controller="Home" asp-action="Index1">
+                    <input type="text" class="login" name="login" placeholder="Login" />
+                    <input type="password" class="haslo" name="haslo" placeholder="Hasło" />
+                    <button>Zatwierdź </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <environment include="Development">
+        <script charset="utf-8" src="~/js/skrypt.js"></script>
+    </environment>
+
+</body>
+</html>

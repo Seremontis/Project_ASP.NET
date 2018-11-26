@@ -1,0 +1,82 @@
+﻿@model PK.Models.Osoba
+@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "Rejestracja";
+    string alert = null;
+    if (ViewData["blad"] != null)
+    {
+        alert = ViewData["blad"].ToString();
+    }
+
+}
+
+<head>
+    <link rel="stylesheet" type="text/css" media="screen" href="~/css/registration.css" />
+</head>
+@{ if (!String.IsNullOrEmpty(alert))
+    {
+        <h1 class="komunikat">@alert</h1>
+    }
+}
+<div class="back">
+    <h2>Rejestracja</h2>
+    <hr />
+    <form action="@Url.Action("Rejestracja","Home")" method="post">
+        <div class="formularz">
+
+            <label for="imie">Podaj imie</label>
+            @Html.TextBoxFor(osoba => osoba.Imie, new { @class = "textBox" })
+
+            <label for="nazwisko">Podaj nazwisko</label>
+            @Html.TextBoxFor(osoba => osoba.Nazwisko, new { @class = "textBox" })
+
+            <label for="miasto">Podaj miasto</label>
+            @Html.TextBoxFor(osoba => osoba.Miasto, new { @class = "textBox" })
+
+            <label for="miejscowosc">Podaj miejscowosc</label>
+            @Html.TextBoxFor(osoba => osoba.Miejscowosc, new { @class = "textBox" })
+
+            <label for="wojewodzctwo">wybierz wojewodzctwo</label>
+            @Html.DropDownListFor(Osoba => Osoba.Wojewodztwo, new List<SelectListItem>
+       { new SelectListItem{Text="Pomorskie", Value="pomorskie"},
+       new SelectListItem{Text="Zachodnio-pomorskie", Value="zachodnio-pomorskie"},
+       new SelectListItem{Text="Warmińsko-mazurskie", Value="warminsko-mazurskie"},
+       new SelectListItem{Text="Podlaskie", Value="podlaskie"},
+       new SelectListItem{Text="Wielkopolskie", Value="wielkopolskie"},
+       new SelectListItem{Text="Kujawsko-pomorskie", Value="kujawsko-pomorskie"},
+       new SelectListItem{Text="Mazowieckie", Value="mazowieckie"},
+       new SelectListItem{Text="Dolnośląskie", Value="dolnoslaskie"},
+       new SelectListItem{Text="Łódzkie", Value="lodzkie"},
+       new SelectListItem{Text="Świętokrzyskie", Value="swietokrzyskie"},
+       new SelectListItem{Text="Lubelskie", Value="lubelskie"},
+       new SelectListItem{Text="Opolskie", Value="opolskie"},
+       new SelectListItem{Text="Śląskie", Value="slaskie"},
+       new SelectListItem{Text="Małopolskie", Value="malopolskie"},
+       new SelectListItem{Text="Podkarpackie", Value="podkarpackie"}}, "Wybierz opcje")
+
+            <label for="email">Podaj email</label>
+            @Html.TextBoxFor(osoba => osoba.Mail, new { @class = "textBox" })
+
+            <label for="kod_pocztowy">Podaj kod pocztowy</label>
+            @Html.TextBoxFor(osoba => osoba.Kod, new { @class = "textBox" })
+
+            <label for="ulica">Podaj ulice</label>
+            @Html.TextBoxFor(osoba => osoba.Ulica, new { @class = "textBox" })
+
+            <label for="nr_domu">Podaj nr domu</label>
+            @Html.TextBoxFor(osoba => osoba.Nr_domu, new { @class = "textBox" })
+
+            <label for="login">Podaj login</label>
+            @Html.TextBoxFor(osoba => osoba.Login, new { @class = "textBox" })
+
+            <label for="haslo">Podaj haslo</label>
+            @Html.TextBoxFor(osoba => osoba.Haslo, new { @class = "textBox" })
+
+            <hr />
+
+            <input type='submit' class="registerbtn" value='Zaloguj' />
+
+        </div>
+
+    </form>
+</div>

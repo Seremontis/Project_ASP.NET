@@ -1,0 +1,88 @@
+﻿@model IEnumerable<PK.Models.Lista>
+@using Microsoft.AspNetCore.Http
+@{
+    int[] koszyk = null;
+    ViewData["Title"] = "Wyszukiwarka";
+    int[] zakupione = (int[])ViewData["zakupione"];
+    if (ViewData["koszyk"] != null)
+    {
+        koszyk = (int[])ViewData["koszyk"];
+    }
+    int typ = (int)ViewData["typ"];
+    int kategoria = (int)ViewData["kat"];
+}
+<head>
+    <link rel="stylesheet" href="~/css/tabela.css" />
+</head>
+
+<h2 class="wynik">Wyszukania dla: @ViewData["typ2"], @ViewData["kat2"]</h2>
+
+
+@{foreach (var item in Model)
+    {
+        string lokalizacja = @"/images/produkty/"+@item.ID+".jpg";
+<div class="produkt">
+    <div class="obrazek">
+        <img src="@lokalizacja" />
+    </div>
+    <div class="produkt_info">
+        <div class="dane">
+            <div class="tytul">Tytuł:<strong>@item.Nazwa</strong></div>
+            <div class="autor">Autor:@item.Autor</div>
+            <div class="data">Rok produkcji:@item.Rok</div>
+        </div>
+        <div class="szczegoly"><p>@item.Opis_produktu</p></div>
+    </div>
+
+    <div class="edit">
+        @if (Context.Session.GetString("Login") != null)
+        {
+            bool noadd = false;
+            bool remove = false;
+            for (int i = 0; i < zakupione.Length; i++)
+            {
+                if (item.ID == zakupione[i])
+                {
+                    noadd = true;
+                }
+
+            }
+            if (koszyk != null)
+            {
+                for (int i = 0; i < koszyk.Length; i++)
+                {
+                    if (item.ID == koszyk[i])
+                    {
+                        remove = true;
+                    }
+
+                }
+            }
+
+
+            if (noadd == false && remove == false)
+            {
+                <form asp-controller="Home" asp-action="SearchAdd" asp-route-a="@item.ID" asp-route-typp="@typ" asp-route-kategoriaa="@kategoria">
+                    <button class="add"></button>
+                </form>
+            }
+            else if (noadd == true)
+            {
+                <div class="lock"></div>
+            }
+            else if (remove == true && noadd == false)
+            {
+                <form asp-controller="Home" asp-action="SearchRem" asp-route-a="@item.ID" asp-route-typp=" @typ" asp-route-kategoriaa=" @kategoria">
+                    <button class="remove"></button>
+                </form>
+            }
+
+        }
+        else
+        {
+            <button class="guest"></button>
+        }
+    </div>
+</div>
+    }
+}
