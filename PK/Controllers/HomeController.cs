@@ -11,7 +11,10 @@ using System.Collections;
 
 namespace PK.Controllers
 {/// <summary>
-///  w metodzie SearchFilter sa przykladowe dane dodane do odpowiednich zawartosci w celu sprawdzenia jak prezentuja sie na stronie
+///  -hashowanie hasła
+///  -dodanie elementów do strony głównej
+///  -poprawawygladu
+///  -sprawdzić czy Widoki CookieeConsentPartial.cshtml i ValidationScriptPartial są potrzebne
 /// </summary>
     public class HomeController : Controller
     {

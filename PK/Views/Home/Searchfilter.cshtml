@@ -30,6 +30,15 @@
             <div class="tytul">Tytuł:<strong>@item.Nazwa</strong></div>
             <div class="autor">Autor:@item.Autor</div>
             <div class="data">Rok produkcji:@item.Rok</div>
+            @if (Context.Session.GetString("Login") != null)
+            {
+                decimal cena = Math.Round(item.Cena_netto + (item.Cena_netto * (decimal)item.Stawka), 2);
+                <div class="cena">Cena:@cena zł</div>
+            }
+            else
+            {
+                <div class="cena">Cena po zalogowaniu</div>
+            }
         </div>
         <div class="szczegoly"><p>@item.Opis_produktu</p></div>
     </div>

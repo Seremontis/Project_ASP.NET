@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Data;
 
-namespace PK.Models //metoda zakup do Finalizacji zakupu-niedokonczona
+namespace PK.Models
 {
     public class Baza
     {
@@ -18,7 +18,7 @@ namespace PK.Models //metoda zakup do Finalizacji zakupu-niedokonczona
         public Baza()
         {
             pol = new SqlConnectionStringBuilder
-            {//TUTAJ
+            {
                 DataSource = @"K2\K2SERVER",                        /// tutaj logowanie do bazy jeśli nie ma autoryzacji windows
                 UserID = "",
                 Password = "",
