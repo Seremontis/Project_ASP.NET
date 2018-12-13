@@ -9,7 +9,7 @@ body {
     margin: auto;
     margin-top: 10px;
     display: grid;
-    grid-template-rows: 365px auto minmax(180px,250px);
+    grid-template-rows: 365px auto 200px;
     grid-row-gap: 15px;
     min-height: 1200px;
     max-width: 1400px;
@@ -123,16 +123,12 @@ main {
     }
 
 footer {
-    padding-left: 5vw;
-    padding-right: 5vw;
+    padding:10px;
     background-color: #BDD8DE;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
 }
 
 .footer_details {
-    margin-left: auto;
-    margin-right: auto;
+    margin:auto;
     height: 100%;
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -324,4 +320,80 @@ div > .close_pop {
 
     .budynek > address {
         padding: 15px;
+    }
+
+
+@media only screen and (max-width: 1000px) {
+    body {
+        background-color: lightblue;
+    }
+
+    .kontener {
+        width:700px;
+    }
+
+    .zawartoscgorna{
+        display:grid;
+        grid-template-columns:auto 200px;
+    }
+
+    .dane{
+        display:grid;
+        grid-auto-columns:50% 50%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+
+    header {
+        display: block;
+    }
+
+    .zawartoscgorna {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: none;
+    }
+
+    #main-nav {
+        grid-row: 2;
+    }
+
+    .panel_log {
+        grid-row: 1;
+    }
+
+    .kontener {
+        width: 99vw;
+        display: block;
+        min-height: 100%;
+        height: 100%;
+        font-size: 2vw;
+    }
+
+    .siedziby {
+        display: block;
+    }
+
+    .footer_details {
+        display: block;
+    }
+
+    .modal_active, .logowanie_mod {
+        width: 90vw;
+        height: 80vh;
+    }
+
+
+        .modal_active > .opcja > button, .modal_active > .opcja > form > button, .logowanie_mod > .opcja > form > button {
+        font-size:2vw;
+        height:25px;
+        margin-top:5px;
+    }
+
+        .logowanie_mod > .opcja > form > input, logowanie_mod > .opcja > form > button {
+            height: 20px;
+            font-size: 2vw;
+            margin-top: 5px;
+        }
     }

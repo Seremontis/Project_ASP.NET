@@ -7,7 +7,7 @@
     display: grid;
     grid-template-columns: 250px auto 45px;
     border: solid black 1px;
-    max-height: 200px;
+    max-height: 250px;
     overflow: hidden;
 }
 
@@ -114,4 +114,51 @@
         background: url('../images/icon/guest.png') no-repeat;
         background-size: 40px 40px;
     }
-    
+
+.mobile{
+    display:none;
+}
+
+.no-mobile{
+    display:block;
+}
+
+
+@media only screen and (max-width: 1000px) {
+
+    .produkt_info {
+        grid-template-rows: auto auto;
+    }
+    .dane {
+        display:grid;
+        grid-template-columns: 50% 50%;
+        grid-gap:7px;
+        grid-row:auto auto;
+        margin-bottom:5px;
+    }
+
+    .no-mobile{
+        display:none;
+    }
+  
+    .mobile{
+        display:block;
+    }
+    .tytul,.autor,.cena,.data{
+        grid-column:initial;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .produkt{
+        display:block;
+    }
+
+    .edit{
+        position:absolute;
+        right:0;
+        top:0;
+        margin-top:15px;
+        margin-right:15px;
+    }
+}
