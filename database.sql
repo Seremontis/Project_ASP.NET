@@ -197,6 +197,8 @@ INSERT INTO  Produkt (nazwa,cena_netto,Stawka_podatku,opis_produktu,rok_produkcj
 		rozpowszechnione tragiczne wydarzenia z najnowszej historii œwiata.',
 		2004,'Paul Burgess',2, 5)
 
+	go
+
 /*Procedura rejestracji u¿ytkownika i inne*/
 Create Procedure Rejestr( 
 	@a1 varchar(50),
