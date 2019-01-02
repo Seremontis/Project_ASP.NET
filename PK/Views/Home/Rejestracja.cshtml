@@ -24,7 +24,7 @@
     <form action="@Url.Action("Rejestracja","Home")" method="post">
         <div class="formularz">
 
-            <label for="imie">Podaj imie</label>
+            <label for="imie">Podaj imię</label>
             @Html.TextBoxFor(osoba => osoba.Imie, new { @class = "textBox" })
 
             <label for="nazwisko">Podaj nazwisko</label>
@@ -33,10 +33,10 @@
             <label for="miasto">Podaj miasto</label>
             @Html.TextBoxFor(osoba => osoba.Miasto, new { @class = "textBox" })
 
-            <label for="miejscowosc">Podaj miejscowosc</label>
+            <label for="miejscowosc">Podaj miejscowość</label>
             @Html.TextBoxFor(osoba => osoba.Miejscowosc, new { @class = "textBox" })
 
-            <label for="wojewodzctwo">wybierz wojewodzctwo</label>
+            <label for="wojewodzctwo">wybierz województwo</label>
             @Html.DropDownListFor(Osoba => Osoba.Wojewodztwo, new List<SelectListItem>
        { new SelectListItem{Text="Pomorskie", Value="pomorskie"},
        new SelectListItem{Text="Zachodnio-pomorskie", Value="zachodnio-pomorskie"},
@@ -69,7 +69,7 @@
             <label for="login">Podaj login</label>
             @Html.TextBoxFor(osoba => osoba.Login, new { @class = "textBox" })
 
-            <label for="haslo">Podaj haslo</label>
+            <label for="haslo">Podaj hasło</label>
             @Html.TextBoxFor(osoba => osoba.Haslo, new { @class = "textBox" })
 
             <hr />
