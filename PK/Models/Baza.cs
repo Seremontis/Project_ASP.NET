@@ -19,7 +19,7 @@ namespace PK.Models
         {
             pol = new SqlConnectionStringBuilder
             {
-                DataSource = @"K2\K2SERVER",                        /// tutaj logowanie do bazy jeśli nie ma autoryzacji windows
+                DataSource = @"DESKTOP-L0C1C7J\SQLEXPRESS",                        /// tutaj logowanie do bazy jeśli nie ma autoryzacji windows
                 UserID = "",
                 Password = "",
                 IntegratedSecurity = true,
@@ -132,7 +132,7 @@ namespace PK.Models
 
         public (string,int) Loguj(string log, string has)
         {
-            string zapytanie = "SELECT TOP 1 id,login FROM Klient WHERE (login LIKE '" + log + "') AND (haslo LIKE '" + has+"')";
+            string zapytanie = "SELECT TOP 1 id,login FROM Klient WHERE (login LIKE '" + log + "') AND (haslo LIKE HASHBYTES('SHA1','" + has+"'))";
             using (comm = new SqlCommand(zapytanie, con))
             {
                 try

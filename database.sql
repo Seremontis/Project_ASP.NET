@@ -43,7 +43,7 @@ CREATE TABLE Klient
 (
 	id					INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	login				VARCHAR(15),
-	haslo				VARCHAR(15),
+	haslo				VARCHAR(150),
 	imie				VARCHAR(60),
 	nazwisko			VARCHAR(70),	
 	miasto				VARCHAR(60),
@@ -213,7 +213,7 @@ Create Procedure Rejestr(
 	@a10 varchar(50),
 	@a11 varchar(50) )
   AS
-  Insert into Klient VALUES (@a1,@a2,@a3,@a4,@a5,@a6,@a7,@a8,@a9,@a10,@a11);
+  Insert into Klient VALUES (@a1,HASHBYTES('SHA1',@a2),@a3,@a4,@a5,@a6,@a7,@a8,@a9,@a10,@a11);
 go
 
 Create Procedure Spr_klienta 
