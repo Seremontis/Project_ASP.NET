@@ -23,17 +23,17 @@
         string lokalizacja = @"/images/produkty/"+@item.ID+".jpg";
 <div class="produkt">
     <div class="obrazek">
-        <img src="@lokalizacja" />
+        <img src="@lokalizacja" alt="Kadr z produktu" />
     </div>
     <div class="produkt_info">
         <div class="dane">
-            <div class="tytul">Tytuł:<strong>@item.Nazwa</strong></div>
-            <div class="autor">Autor:@item.Autor</div>
-            <div class="data">Rok produkcji:@item.Rok</div>
+            <div class="tytul">Tytuł: <strong>@item.Nazwa</strong></div>
+            <div class="autor">Autor: @item.Autor</div>
+            <div class="data">Rok produkcji: @item.Rok</div>
             @if (Context.Session.GetString("Login") != null)
             {
                 decimal cena = Math.Round(item.Cena_netto + (item.Cena_netto * (decimal)item.Stawka), 2);
-                <div class="cena">Cena:@cena zł</div>
+                <div class="cena">Cena: @cena zł</div>
             }
             else
             {

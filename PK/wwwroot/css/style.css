@@ -122,6 +122,44 @@ main {
         width: 90%;
     }
 
+    /*picture for mainpage*/
+
+.image {
+    position: relative;
+    margin: auto;
+    height: 100%;
+    width: auto;
+    margin-bottom: 15px;
+}
+
+    .image > .imgindex {
+        max-height: 500px;
+        max-width: 600px;
+        margin: auto;
+    }
+
+        .image > .imgindex > img {
+            border-radius: 10px;
+        }
+
+.maincontent {
+    margin-left: 40px;
+    margin-right: 40px;
+    text-align: justify;
+    font-family: Comic Sans MS;
+    font-size: 26px;
+    letter-spacing: 1.6px;
+    word-spacing: 1.8px;
+    color: #000000;
+    font-weight: bold;
+    text-decoration: none solid rgb(68, 68, 68);
+    font-style: normal;
+    font-variant: normal;
+    text-align-last: center;
+}
+
+
+/**/
 footer {
     padding:10px;
     background-color: #BDD8DE;
@@ -324,9 +362,6 @@ div > .close_pop {
 
 
 @media only screen and (max-width: 1000px) {
-    body {
-        background-color: lightblue;
-    }
 
     .kontener {
         width:700px;
@@ -341,10 +376,22 @@ div > .close_pop {
         display:grid;
         grid-auto-columns:50% 50%;
     }
+    .dane.szczegoly{
+        margin-bottom:5px;
+    }
+
+    .image > .imgindex {
+        width: 95vw;
+    }
+
+    .image > .imgindex > img {
+        width: 100%;
+        max-width: 600px;
+    }
 }
 
 @media only screen and (max-width: 700px) {
-
+        
     header {
         display: block;
     }
@@ -371,13 +418,33 @@ div > .close_pop {
         font-size: 2vw;
     }
 
+    .maincontent {
+        font-size: 20px;
+    }
+
+    .dane{
+        font-size:14px;
+        text-align:justify;
+        text-align-last:center;
+    }
+
+    .mobile>p{
+        font-size:13px;
+        text-align:justify;
+    }
     .siedziby {
         display: block;
     }
 
+
     .footer_details {
         display: block;
     }
+
+    .kontaktfoot>ul {
+        font-size:15px;
+    }
+
 
     .modal_active, .logowanie_mod {
         width: 90vw;

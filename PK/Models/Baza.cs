@@ -19,7 +19,7 @@ namespace PK.Models
         {
             pol = new SqlConnectionStringBuilder
             {
-                DataSource = @"DESKTOP-L0C1C7J\SQLEXPRESS",                        /// tutaj logowanie do bazy jeśli nie ma autoryzacji windows
+                DataSource = @"K2\K2SERVER",                        /// tutaj logowanie do bazy jeśli nie ma autoryzacji windows
                 UserID = "",
                 Password = "",
                 IntegratedSecurity = true,
