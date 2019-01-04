@@ -35,7 +35,6 @@ namespace PK.Models
             try
             {
                 con.Open();
-                test = "połączenie nawiązane";
                 con.Close();
             }
             catch (SqlException exc)
