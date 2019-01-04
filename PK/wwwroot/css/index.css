@@ -1,0 +1,20 @@
+﻿p {
+    text-align: center;
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 26px;
+    letter-spacing: 1.6px;
+    word-spacing: 1.8px;
+    color: #000000;
+    font-weight: 700;
+    text-decoration: none solid rgb(68, 68, 68);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: capitalize;
+}
+.image {
+    margin-left: 10px;
+    margin-left: 350px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+}
