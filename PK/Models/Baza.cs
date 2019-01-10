@@ -85,7 +85,7 @@ namespace PK.Models
             }
         }
 
-        public bool Rejestruj(Osoba osoba) //dodac sprawdzanie dublowania konta
+        public bool Rejestruj(Osoba osoba)
         {
             bool weryfikacja;
             if (!Sprawdz_czy_zajety(osoba))

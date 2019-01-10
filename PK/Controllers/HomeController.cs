@@ -10,12 +10,7 @@ using Microsoft.AspNetCore.Routing;
 using System.Collections;
 
 namespace PK.Controllers
-{/// <summary>
-///  -hashowanie hasła
-///  -dodanie elementów do strony głównej
-///  -poprawawygladu
-///  -sprawdzić czy Widoki CookieeConsentPartial.cshtml i ValidationScriptPartial są potrzebne
-/// </summary>
+{
     public class HomeController : Controller
     {
         private Baza baza;
