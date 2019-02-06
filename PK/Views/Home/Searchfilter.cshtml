@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<PK.Models.Lista>
 @using Microsoft.AspNetCore.Http
 @{
-    int[] koszyk = null;
+    int[] basket = null;
     ViewData["Title"] = "Wyszukiwarka";
     int[] zakupione = (int[])ViewData["zakupione"];
     if (ViewData["koszyk"] != null)
     {
-        koszyk = (int[])ViewData["koszyk"];
+        basket = (int[])ViewData["koszyk"];
     }
     int typ = (int)ViewData["typ"];
-    int kategoria = (int)ViewData["kat"];
+    int category = (int)ViewData["kat"];
 }
 <head>
     <link rel="stylesheet" href="~/css/tabela.css" />
@@ -21,26 +21,26 @@
 @{foreach (var item in Model)
     {
         string lokalizacja = @"/images/produkty/"+@item.ID+".jpg";
-<div class="produkt">
-    <div class="obrazek">
+<div class="product">
+    <div class="picture_movie">
         <img src="@lokalizacja" alt="Kadr z produktu" />
     </div>
-    <div class="produkt_info">
-        <div class="dane">
-            <div class="tytul">Tytuł: <strong>@item.Nazwa</strong></div>
-            <div class="autor">Autor: @item.Autor</div>
-            <div class="data">Rok produkcji: @item.Rok</div>
+    <div class="product_info">
+        <div class="data">
+            <div class="title">Tytuł: <strong>@item.Nazwa</strong></div>
+            <div class="author">Autor: @item.Autor</div>
+            <div class="date">Rok produkcji: @item.Rok</div>
             @if (Context.Session.GetString("Login") != null)
             {
                 decimal cena = Math.Round(item.Cena_netto + (item.Cena_netto * (decimal)item.Stawka), 2);
-                <div class="cena">Cena: @cena zł</div>
+                <div class="price">Cena: @cena zł</div>
             }
             else
             {
-                <div class="cena">Cena po zalogowaniu</div>
+                <div class="price">Cena po zalogowaniu</div>
             }
         </div>
-        <div class="szczegoly"><p class="no-mobile">@item.Opis_produktu</p><details class="mobile"><summary>Zobacz opis</summary><p>@item.Opis_produktu</p></details></div>
+        <div class="details"><p class="no-mobile">@item.Opis_produktu</p><details class="mobile"><summary>Zobacz opis</summary><p>@item.Opis_produktu</p></details></div>
     </div>
 
     <div class="edit">
@@ -56,11 +56,11 @@
                 }
 
             }
-            if (koszyk != null)
+            if (basket != null)
             {
-                for (int i = 0; i < koszyk.Length; i++)
+                for (int i = 0; i < basket.Length; i++)
                 {
-                    if (item.ID == koszyk[i])
+                    if (item.ID == basket[i])
                     {
                         remove = true;
                     }
@@ -71,7 +71,7 @@
 
             if (noadd == false && remove == false)
             {
-                <form asp-controller="Home" asp-action="SearchAdd" asp-route-a="@item.ID" asp-route-typp="@typ" asp-route-kategoriaa="@kategoria">
+                <form asp-controller="Home" asp-action="SearchAdd" asp-route-a="@item.ID" asp-route-typp="@typ" asp-route-kategoriaa="@category">
                     <button class="add"></button>
                 </form>
             }
@@ -81,7 +81,7 @@
             }
             else if (remove == true && noadd == false)
             {
-                <form asp-controller="Home" asp-action="SearchRem" asp-route-a="@item.ID" asp-route-typp=" @typ" asp-route-kategoriaa=" @kategoria">
+                <form asp-controller="Home" asp-action="SearchRem" asp-route-a="@item.ID" asp-route-typp=" @typ" asp-route-kategoriaa=" @category">
                     <button class="remove"></button>
                 </form>
             }

@@ -1,4 +1,4 @@
-﻿.produkt {
+﻿.product {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 8px;
@@ -10,30 +10,30 @@
     overflow: hidden;
 }
 
-    .produkt:nth-child(2n+1) {
+    .product:nth-child(2n+1) {
         background: rgb(140, 180, 124)
     }
 
-    .produkt:nth-child(2n) {
+    .product:nth-child(2n) {
         background: rgb(228, 177, 177);
     }
 
-    .produkt:hover {
+    .product:hover {
         opacity: 0.85;
     }
 
-.obrazek {
+.picture_movie {
     margin: 8px;
     position: relative;
     grid-column: 1;
 }
 
-    .obrazek > img {
+    .picture_movie > img {
         height: 100px;
         width: 250px;
     }
 
-.produkt_info {
+.product_info {
     display: grid;
     grid-template-rows: 30px auto;
     margin: 3px;
@@ -42,7 +42,7 @@
     padding-right: 15px;
 }
 
-.dane {
+.data {
     margin: auto;
     position: relative;
     display: grid;
@@ -51,27 +51,27 @@
     width: 100%;
 }
 
-.tytul,
-.autor,
-.data,
-.cena{
+.title,
+.author,
+.date,
+.price{
     position: relative;
     margin: auto;
 }
 
-.tytul {
+.title {
     grid-column: 1;
 }
 
-.autor {
+.author {
     grid-column: 2;
 }
 
-.data {
+.date {
     grid-column: 3;
 }
 
-.szczegoly {
+.details {
     display: block;
     border-top: solid black 3px;
     background: rgba(76, 141, 169, 0.74);
@@ -125,10 +125,10 @@
 
 @media only screen and (max-width: 1000px) {
 
-    .produkt_info {
+    .product_info {
         grid-template-rows: auto auto;
     }
-    .dane {
+    .data {
         display:grid;
         grid-template-columns: 50% 50%;
         grid-gap:7px;
@@ -143,13 +143,13 @@
     .mobile{
         display:block;
     }
-    .tytul,.autor,.cena,.data{
+    .title,.author,.price,.date{
         grid-column:initial;
     }
 }
 
 @media only screen and (max-width: 1000px) {
-    .produkt{
+    .product{
         display:block;
     }
 

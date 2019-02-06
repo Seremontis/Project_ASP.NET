@@ -1,6 +1,6 @@
 var modal = document.querySelector(".modal_body");
 var modal_act = document.querySelector(".modal_active");
-var log_mod = document.querySelector(".logowanie_mod");
+var log_mod = document.querySelector(".sign_modal");
 
 
 var pop_close = document.querySelectorAll(".close_pop");
@@ -22,8 +22,8 @@ function modal_log() {
 }
 
 
-if (typeof document.querySelector(".logowanie") !== 'undefined' ||document.querySelector(".logowanie") == null) {
-    var log = document.querySelector(".logowanie").addEventListener("click", function () {
+if (typeof document.querySelector(".sign_in") !== 'undefined' || document.querySelector(".sign_in") == null) {
+    var log = document.querySelector(".sign_in").addEventListener("click", function () {
         modal.style.display = "block";
         if (modal_act.style.display != "block") {
             modal_act.style.display = "block";

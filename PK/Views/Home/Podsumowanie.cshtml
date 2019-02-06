@@ -4,10 +4,10 @@
     ViewData["Title"] = "Podsumowanie";
     decimal suma = 0;
 }
-<link rel="stylesheet" runat="server" media="screen" href="~/css/Podsumowanie.css" />
+<link rel="stylesheet" runat="server" media="screen" href="~/css/summary.css" />
 <h2>Podsumowanie</h2>
 
-<div class="Podsumowanie">
+<div class="summary">
     @if (Model.Count() != 0)
     {
         <table>
@@ -32,20 +32,20 @@
             }
             <tr>
                 <td colspan="3" class="null"></td>
-                <td id="zaplata1">Suma:</td>
-                <td id="zaplata2">@suma zł</td>
+                <td id="pay1">Suma:</td>
+                <td id="pay2">@suma zł</td>
                 <td class="null"></td>
             </tr>
         </table>
         
-            <form class="formZatw" asp-controller="Home" asp-action="ZatwierdzZam">
+            <form class="form_confirm" asp-controller="Home" asp-action="ZatwierdzZam">
                 <button class="Confirm">Potwierdzam zamówienie</button>
             </form>
         
     }
     else
     {
-        <div class="brak">Brak produktów</div>
+        <div class="empty">Brak produktów</div>
     }
 
 

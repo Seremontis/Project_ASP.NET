@@ -5,11 +5,11 @@ body {
     padding-bottom: 15px;
 }
 
-.kontener {
+.conatainer {
     margin: auto;
     margin-top: 10px;
     display: grid;
-    grid-template-rows: 365px auto 200px;
+    grid-template-rows: 365px auto minmax(auto,250px);
     grid-row-gap: 15px;
     min-height: 1200px;
     max-width: 1400px;
@@ -22,8 +22,9 @@ header {
     border-radius: 10px;
 }
 
-.zawartoscgorna {
+.navigation_panel {
     background-color: #3092c0;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#3298c8), to(#2e8cb8));
     background-image: linear-gradient(to bottom, #3298c8, #2e8cb8);
     display: grid;
     grid-template-columns: 50% 50%;
@@ -32,7 +33,7 @@ header {
     padding-bottom: 10px;
 }
 
-.panel_log {
+.panel_user {
     width: 100%;
     height: 100%;
     padding-top: 10px;
@@ -40,35 +41,35 @@ header {
     position: relative;
 }
 
-    .panel_log > .logowanie2 {
-        float: right;
-        margin-right: 10px;
+.panel_log > .logowanie2 {
+    float: right;
+    margin-right: 10px;
+}
+
+.panel_user > .butkoszyk {
+    margin-left: 10px;
+    float: left;
+}
+
+    .panel_user > .butkoszyk > form > #koszyk {
+        border: none;
+        height: 35px;
+        width: 35px;
+        background: url('../images/icon/shop.png') no-repeat;
+        background-size: 35px 35px;
     }
 
-    .panel_log > .butkoszyk {
-        margin-left: 10px;
-        float: left;
+.panel_user > .sign_in {
+    float: right;
+    margin-right: 20px;
+    background: #e5d979;
+    border: 0;
+    border-radius: 5px;
+}
+
+    .panel_user > .sign_in:hover {
+        background: #eb9c3b;
     }
-
-        .panel_log > .butkoszyk > form > #koszyk {
-            border: none;
-            height: 35px;
-            width: 35px;
-            background: url('../images/icon/shop.png') no-repeat;
-            background-size: 35px 35px;
-        }
-
-    .panel_log > .logowanie {
-        float: right;
-        margin-right: 20px;
-        background: #e5d979;
-        border: 0;
-        border-radius: 5px;
-    }
-
-        .panel_log > .logowanie:hover {
-            background: #eb9c3b;
-        }
 
 .logout {
     border: solid black 1px;
@@ -122,7 +123,7 @@ main {
         width: 90%;
     }
 
-    /*picture for mainpage*/
+/*picture for mainpage*/
 
 .image {
     position: relative;
@@ -152,6 +153,7 @@ main {
     word-spacing: 1.8px;
     color: #000000;
     font-weight: bold;
+    -webkit-text-decoration: none solid rgb(68, 68, 68);
     text-decoration: none solid rgb(68, 68, 68);
     font-style: normal;
     font-variant: normal;
@@ -161,25 +163,25 @@ main {
 
 /**/
 footer {
-    padding:10px;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
     background-color: #BDD8DE;
-}
-
-.footer_details {
-    margin:auto;
-    height: 100%;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-column-gap: 15px;
+    height: 100%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
 }
 
-.kontaktfoot {
+.contactfoot {
     margin-left: auto;
     margin-right: auto;
 }
 
-    .kontaktfoot > .tytul {
-        margin-left: 1.2em;
+    .contactfoot > .title {
+        font-weight: bold;
     }
 
 address {
@@ -199,7 +201,7 @@ address {
     top: 0;
 }
 
-.modal_active, .logowanie_mod {
+.modal_active, .sign_modal {
     position: relative;
     top: 50%;
     left: 50%;
@@ -207,8 +209,10 @@ address {
     width: 650px;
     max-width: 100vw;
     max-height: 100%;
+    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     background-color: rgba(137, 180, 76, 0.99);
+    -webkit-box-shadow: 3px 3px 5px 6px #3c3a3a;
     box-shadow: 3px 3px 5px 6px #3c3a3a;
     -webkit-animation-name: popup;
     -webkit-animation-duration: 0.5s;
@@ -218,7 +222,7 @@ address {
     animation-duration: 0.5s
 }
 
-.logowanie_mod {
+.sign_modal {
     display: none;
 }
 
@@ -246,7 +250,7 @@ address {
     }
 }
 
-.modal_active > .tytul, .logowanie_mod > .tytul {
+.modal_active > .title, .sign_modal > .title {
     width: 100%;
     height: 50px;
     background-color: rgb(65, 130, 211);
@@ -262,7 +266,8 @@ div > .close_pop {
     overflow: visible;
 }
 
-.modal_active > .opcja, .logowanie_mod > .opcja {
+.modal_active > .option,
+.sign_modal > .option {
     position: relative;
     width: 90%;
     margin-bottom: 15px;
@@ -270,7 +275,9 @@ div > .close_pop {
     margin-right: auto;
 }
 
-    .modal_active > .opcja > button, .modal_active > .opcja > form > button, .logowanie_mod > .opcja > form > button {
+    .modal_active > .option > button,
+    .modal_active > .option > form > button,
+    .sign_modal > .option > form > button {
         width: 100%;
         height: 50px;
         background: none;
@@ -280,11 +287,12 @@ div > .close_pop {
         font-size: 20px;
     }
 
-        .modal_active > .opcja > button:hover, .logowanie_mod > .opcja > form > button:hover {
+        .modal_active > .option > button:hover, 
+        .sign_modal > .option > form > button:hover {
             background: rgba(93, 133, 48, 0.98);
         }
 
-    .logowanie_mod > .opcja > form > input {
+    .sign_modal > .option > form > input {
         width: 100%;
         height: 40px;
         background: #d8d7cd;
@@ -315,18 +323,18 @@ div > .close_pop {
 
 /*Kontakt*/
 
-#DaneFirmy {
+.Data_company {
     margin-right: 5vw;
     margin-left: 5vw;
     margin-top: 5vh;
     margin-bottom: 5vh;
 }
 
-    #DaneFirmy > p {
+    .Data_company > p {
         text-indent: 1.5em;
     }
 
-.siedziby {
+.headquarters {
     margin-top: 3vh;
     margin-bottom: 3vh;
     width: 100%;
@@ -334,12 +342,12 @@ div > .close_pop {
     grid-template-columns: repeat(3,1fr);
 }
 
-.dom {
+.home_shape {
     margin-left: 5px;
     margin-right: 5px;
 }
 
-.dach {
+.roof_shape {
     margin: auto;
     width: 0;
     height: 0;
@@ -348,7 +356,7 @@ div > .close_pop {
     border-bottom: 100px solid #3b1910;
 }
 
-.budynek {
+.building_shape {
     margin: auto;
     margin-top: 3px;
     width: 300px;
@@ -356,47 +364,73 @@ div > .close_pop {
     background-color: aquamarine;
 }
 
-    .budynek > address {
+    .building_shape > address {
         padding: 15px;
     }
 
 
+.Data_company > address {
+    font-size: 18px;
+}
+
+
 @media only screen and (max-width: 1000px) {
 
-    .kontener {
-        width:700px;
+    .conatainer {
+        width: 700px;
     }
 
-    .zawartoscgorna{
-        display:grid;
-        grid-template-columns:auto 200px;
+    .navigation_panel {
+        display: grid;
+        grid-template-columns: auto 200px;
     }
 
-    .dane{
-        display:grid;
-        grid-auto-columns:50% 50%;
+    .product_info > .data {
+        display: grid;
+        grid-auto-columns: 50% 50%;
     }
-    .dane.szczegoly{
-        margin-bottom:5px;
-    }
+
+        .product_info>.data>.details {
+            margin-bottom: 5px;
+        }
 
     .image > .imgindex {
         width: 95vw;
     }
 
-    .image > .imgindex > img {
-        width: 100%;
-        max-width: 600px;
+        .image > .imgindex > img {
+            width: 100%;
+            max-width: 600px;
+        }
+
+    #img_welcome {
+        width: 90%;
+        height: auto;
+    }
+
+    .roof_shape {
+        border-left: 100px solid transparent;
+        border-right: 100px solid transparent;
+        border-bottom: 75px solid #3b1910;
+    }
+
+    .building_shape {
+        width: 200px;
+        height: 175px;
+    }
+
+    .Data_company > address {
+        font-size: 3vw;
     }
 }
 
 @media only screen and (max-width: 700px) {
-        
+
     header {
         display: block;
     }
 
-    .zawartoscgorna {
+    .navigation_panel {
         display: grid;
         grid-template-rows: auto;
         grid-template-columns: none;
@@ -406,11 +440,11 @@ div > .close_pop {
         grid-row: 2;
     }
 
-    .panel_log {
+    .panel_user {
         grid-row: 1;
     }
 
-    .kontener {
+    .conatainer {
         width: 99vw;
         display: block;
         min-height: 100%;
@@ -422,45 +456,54 @@ div > .close_pop {
         font-size: 20px;
     }
 
-    .dane{
-        font-size:14px;
-        text-align:justify;
-        text-align-last:center;
+    .product_info > .data {
+        font-size: 14px;
+        text-align: justify;
+        text-align-last: center;
     }
 
-    .mobile>p{
-        font-size:13px;
-        text-align:justify;
+    .mobile > p {
+        font-size: 13px;
+        text-align: justify;
     }
-    .siedziby {
+
+    .headquarters {
         display: block;
     }
 
+    .building_shape {
+        width: 200px;
+        height: auto;
+        font-size: 3vw;
+    }
 
-    .footer_details {
+    footer {
         display: block;
     }
 
-    .kontaktfoot>ul {
-        font-size:15px;
+    .contactfoot > ul {
+        font-size: 15px;
     }
 
 
-    .modal_active, .logowanie_mod {
+    .modal_active, .sign_modal {
         width: 90vw;
         height: 80vh;
     }
 
 
-        .modal_active > .opcja > button, .modal_active > .opcja > form > button, .logowanie_mod > .opcja > form > button {
-        font-size:2vw;
-        height:25px;
-        margin-top:5px;
-    }
+        .modal_active > .option > button, 
+        .modal_active > .option > form > button, 
+        .sign_modal > .option > form > button {
+            font-size: 2vw;
+            height: 25px;
+            margin-top: 5px;
+        }
 
-        .logowanie_mod > .opcja > form > input, logowanie_mod > .opcja > form > button {
+        .sign_modal > .option > form > input, 
+        sign_modal > .option > form > button {
             height: 20px;
             font-size: 2vw;
             margin-top: 5px;
         }
-    }
+}

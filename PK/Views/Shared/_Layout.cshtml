@@ -27,9 +27,9 @@
 
 </head>
 <body>
-    <div class="kontener">
+    <div class="conatainer">
         <header>
-            <div class="zawartoscgorna">
+            <div class="navigation_panel">
                 <nav id="main-nav">
 
                     <ul id="main-menu" class="sm sm-blue">
@@ -58,23 +58,23 @@
 
                     </ul>
                 </nav>
-                <div class="panel_log">
+                <div class="panel_user">
                     @{ if (!String.IsNullOrEmpty(Context.Session.GetString("Login")))
                         {
-                            <div class="logowanie2">
+                            <div class="user_info">
                                 Zalogowany: <strong>@Context.Session.GetString("Login")</strong>
 
                                 <a class="logout" asp-action="Logout">Wyloguj</a>
                             </div>
-                            <div class="butkoszyk">
+                            <div class="basket_link">
                                 <form asp-controller="Home" asp-action="Podsumowanie">
-                                    <button id="koszyk"></button>
+                                    <button id="basket"></button>
                                 </form>
                             </div>
                         }
                         else
                         {
-                            <button class="logowanie">Logowanie/Rejestracja</button>
+                            <button class="sign_in">Logowanie/Rejestracja</button>
                         }
                     }
                 </div>
@@ -109,26 +109,25 @@
             @RenderBody()
         </main>
         <footer>
-            <div class="footer_details">
-                <div class="kontaktfoot" id="k1">
-                    <h3 class="tytul">Dane do pierwszej siedziby</h3>
+                <div class="contactfoot" id="k1">
+                    <h2 class="title">Dane do pierwszej siedziby</h2>
                     <ul>
                         <li>ul. Władysława Łokietka 79</li>
                         <li>31-280 Kraków</li>
                         <li>Nr: 583 098 928</li>
                     </ul>
                 </div>
-                <div class="kontaktfoot">
-                    <h3 class="tytul">Dane do drugiej siedziby</h3>
+                <div class="contactfoot">
+                    <h2 class="title">Dane do drugiej siedziby</h2>
                     <ul>
-                        <li>ul. kupa 18</li>
+                        <li>ul. XXX 18</li>
                         <li>31-280 Kraków</li>
                         <li>Nr: 523 989 928</li>
                     </ul>
 
                 </div>
-                <div class="kontaktfoot">
-                    <h3 class="tytul">Ogólne informacje</h3>
+                <div class="contactfoot">
+                    <h2 class="title">Ogólne informacje</h2>
                     <ul>
                         <li>NIP: 9452156998</li>
                         <li>REGON: 121495203</li>
@@ -136,7 +135,7 @@
                         <li>Kapitał zakładowy: 2 811 500 zł</li>
                     </ul>
                 </div>
-            </div>
+
         </footer>
 
     </div>
@@ -144,17 +143,17 @@
 
     <div class="modal_body">
         <div class="modal_active">
-            <div class="tytul"><button class="close_pop">X</button></div>
-            <div class="opcja">
+            <div class="title"><button class="close_pop">X</button></div>
+            <div class="option">
                 <button onclick="modal_log()" class="zaloguj">Zaloguj się</button>
                 <form asp-controller="Home" asp-action="Rejestracja" asp-route-uruchom="true">
                     <button>Zarejestruj się</button>
                 </form>
             </div>
         </div>
-        <div class="logowanie_mod">
-            <div class="tytul"><button class="close_pop">X</button></div>
-            <div class="opcja">
+        <div class="sign_modal">
+            <div class="title"><button class="close_pop">X</button></div>
+            <div class="option">
                 <form asp-controller="Home" asp-action="Index1">
                     <input type="text" class="login" name="login" placeholder="Login" />
                     <input type="password" class="haslo" name="haslo" placeholder="Hasło" />

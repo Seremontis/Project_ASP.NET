@@ -2,7 +2,7 @@
     text-align:center;
     text-decoration:underline;
 }
-.Podsumowanie {
+.summary {
     padding-top: 25px;
 }
 
@@ -82,20 +82,20 @@ form > .remove {
         background: none;
     }
 
-#zaplata1, #zaplata2 {
+#pay1, #pay2 {
     background-color: #f3b92f;
     font-weight:bold;
     font-size:1.3em;
 }
 
-#zaplata1 {
+#pay1 {
     border-top: solid 1px black;
     border-left: solid 1px black;
     border-bottom: solid 1px black;
     text-align:right;
 }
 
-#zaplata2 {
+#pay2 {
     border-top: solid 1px black;
     border-right: solid 1px black;
     border-bottom: solid 1px black;
@@ -104,7 +104,7 @@ form > .remove {
 
 }
 
-.brak{
+.empty{
     margin:auto;
     padding-top:30px;
     font-size:30px;
@@ -112,8 +112,8 @@ form > .remove {
     text-align:center;
 }
 
-.formZatw{
-    padding-top:20px;
+.form_confirm{
+    padding-top: 20px;
 }
 .Confirm {
     height: 50px;
