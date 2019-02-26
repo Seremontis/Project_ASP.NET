@@ -2,5 +2,7 @@
 Projekt zaliczeniowy w ASP.NET
 
 
-Karol Ścigała -> odpowiedzialny za kod strony, niewielkie poprawki w bazie
-Patryk Wiśniewski -> odpowiedzialny za bazę danych a także o zamieszczone grafiki
+<ul>
+  <li>Karol Ścigała -> odpowiedzialny za kod strony, niewielkie poprawki w bazie</li>
+  <li>Patryk Wiśniewski -> odpowiedzialny za bazę danych a także o zamieszczone grafiki</li>
+</ul>
